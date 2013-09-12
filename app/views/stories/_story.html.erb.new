@@ -1,0 +1,6 @@
+<% @stories.each do |story| %>
+<h3><%= link_to story.name, story.link %></h3>
+  <p>
+Submitted by: <%= story.user.login %> | Score: <%= story.votes_count %>
+  </p>
+<% end %>

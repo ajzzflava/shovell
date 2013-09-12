@@ -1,0 +1,6 @@
+$('#vote_score').html("Score: <%= @story.reload.votes.size %>");
+$('#vote_score').css({ "color":"#fcf", "font-size":"100%", "background":"blue" });
+$('#vote_score').fadeIn("fast");
+$('#vote_score').fadeOut("slow");
+$('#vote_history').find("em").remove();
+$('#vote_history').prepend("<li><%= @story.votes.find(:last).created_at.to_formatted_s(:short) %></li>");
